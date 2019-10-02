@@ -20,6 +20,11 @@ mod sys;
 #[path = "redox.rs"]
 mod sys;
 
+#[cfg(target_os = "sunrise")]
+#[path = "sunrise.rs"]
+mod sys;
+
+
 pub trait Uname {
     fn sysname(&self) -> Cow<str>;
     fn nodename(&self) -> Cow<str>;
